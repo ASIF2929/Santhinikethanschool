@@ -11,8 +11,7 @@ body::before {
   left: 0;
   height: 125vh;
   width: 100%;
-  background-image: url('../image/lOGO.png');
-
+  background-image: url('./image/lOGO.png');
   background-size:auto;
   background-position: center;
   background-repeat: no-repeat;
