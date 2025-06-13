@@ -202,11 +202,11 @@ button {
   font-weight: bold;
 }
 
-/*ul.no-bullets {
+ul.no-bullets {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}*/
+}
 
 /* Academic animation styles */
 .academic-section h2 {
