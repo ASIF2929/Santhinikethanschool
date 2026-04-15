@@ -53,31 +53,23 @@
     <img id="popup-img" src="" alt="Full Image">
   </div>
 
-  <script>
-    const images = document.querySelectorAll('.gallery img');
-    const popup = document.getElementById('popup');
-    const popupImg = document.getElementById('popup-img');
-    const closeBtn = document.getElementById('close');
+ <script>
+        const popup = document.getElementById('popup');
+        let timer;
 
-    // Open popup on HOVER
-    images.forEach((img) => {
-      img.addEventListener('mouseenter', (e) => {
-        popupImg.src = e.target.src;
-        popup.classList.add('show');
-      });
+        function showPopup() {
+            clearTimeout(timer);
+            popup.style.display = 'block';
+        }
 
-      // Close popup when mouse leaves the image
-      img.addEventListener('mouseleave', () => {
-        popup.classList.remove('show');
-        popupImg.src = "";
-      });
-    });
+        function hidePopup() {
+            timer = setTimeout(() => {
+                popup.style.display = 'none';
+            }, 300); // delay timer of 300ms
+        }
 
-    // Close popup on close button click
-    closeBtn.addEventListener('click', () => {
-      popup.classList.remove('show');
-      popupImg.src = "";
-    });
-  </script>
+        document.querySelector('.gallery').addEventListener('mouseenter', showPopup);
+        document.querySelector('.gallery').addEventListener('mouseleave', hidePopup);
+    </script>
 </body>
 </html>
