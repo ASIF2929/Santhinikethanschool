@@ -59,6 +59,21 @@ header {
   margin-right: 10px;
 }
 
+/* Marquee styling */
+.marq {
+  background-color: #FFD700; /* Gold background */
+  color: #333;
+  font-weight: bold;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.marq img {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 /* Nav bar */
 .nav-links {
   width: 100%;
