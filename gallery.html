@@ -57,16 +57,24 @@
     const images = document.querySelectorAll('.gallery img');
     const popup = document.getElementById('popup');
     const popupImg = document.getElementById('popup-img');
+    const closeBtn = document.getElementById('close');
 
+    // Open popup on HOVER
     images.forEach((img) => {
-      img.addEventListener('click', (e) => {
+      img.addEventListener('mouseenter', (e) => {
         popupImg.src = e.target.src;
         popup.classList.add('show');
       });
+
+      // Close popup when mouse leaves the image
+      img.addEventListener('mouseleave', () => {
+        popup.classList.remove('show');
+        popupImg.src = "";
+      });
     });
 
-    // Close popup on click anywhere
-    popup.addEventListener('click', () => {
+    // Close popup on close button click
+    closeBtn.addEventListener('click', () => {
       popup.classList.remove('show');
       popupImg.src = "";
     });
