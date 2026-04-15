@@ -53,23 +53,23 @@
     <img id="popup-img" src="" alt="Full Image">
   </div>
 
- <script>
-        const popup = document.getElementById('popup');
-        let timer;
+<script>
+  const images = document.querySelectorAll('.gallery img');
+  const popup = document.getElementById('popup');
+  const popupImg = document.getElementById('popup-img');
 
-        function showPopup() {
-            clearTimeout(timer);
-            popup.style.display = 'block';
-        }
+  images.forEach((img) => {
+    img.addEventListener('click', (e) => {
+      popupImg.src = e.target.src;
+      popup.classList.add('show');
+    });
+  });
 
-        function hidePopup() {
-            timer = setTimeout(() => {
-                popup.style.display = 'none';
-            }, 300); // delay timer of 300ms
-        }
-
-        document.querySelector('.gallery').addEventListener('mouseenter', showPopup);
-        document.querySelector('.gallery').addEventListener('mouseleave', hidePopup);
-    </script>
+  // Close popup on click anywhere
+  popup.addEventListener('click', () => {
+    popup.classList.remove('show');
+    popupImg.src = "";
+  });
+</script>
 </body>
 </html>
